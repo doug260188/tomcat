@@ -1,7 +1,8 @@
 version: '3'
 services:
   tomcat:
-    image: ubuntu:latest
-    restart: always
+    image: tomcat:8.5
     ports:
-      - 8085:80
+      - "8085:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
