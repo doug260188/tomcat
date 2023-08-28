@@ -18,7 +18,7 @@ LABEL maintainer Rodrigo Silva Rodrigues <rsrodrigues.88@hotmail.com>
 #RUN mv apache-tomcat-8.5.93/* /opt/tomcat/.
 
 # Apagando diretorio webapps
-RUN rm -rf /usr/local/Tomcat/webapps
+RUN rm -rf /usr/local/tomcat/webapps
 RUN mkdir /usr/local/Tomcat/webapps
 
 WORKDIR /usr/local/Tomcat/webapps
