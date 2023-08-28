@@ -5,7 +5,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'wget https://https://github.com/doug260188/tomcat/blob/main/dockerfile'
-                sh 'docker build -t doug260188/nginx:latest .'
+                sh 'docker build -t doug260188/tomcat:8.0 .'
             }
         }
         stage('Run Image') {
