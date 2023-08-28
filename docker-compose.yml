@@ -1,7 +1,7 @@
 version: '3'
 services:
   tomcat:
-    image: tomcat:8.5
+    image: doug260188/tomcat:8.5
     ports:
       - "8085:8080"
     volumes:
