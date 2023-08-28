@@ -19,7 +19,7 @@ LABEL maintainer Rodrigo Silva Rodrigues <rsrodrigues.88@hotmail.com>
 
 WORKDIR /usr/local/tomcat/webapps
 RUN wget https://tomcat2.s3.amazonaws.com/sisimovel.war -O imoveis.war
-
+RUN pwd *
 
 EXPOSE 80
 CMD ["/opt/tomcat/catalina.sh", "run"]
