@@ -18,9 +18,8 @@ LABEL maintainer Rodrigo Silva Rodrigues <rsrodrigues.88@hotmail.com>
 #RUN mv apache-tomcat-8.5.93/* /opt/tomcat/.
 
 WORKDIR /usr/local/tomcat/webapps
-#WORKDIR /opt/tomcat/webapps
-RUN wget https://tomcat2.s3.amazonaws.com/sisimovel.war
-RUN mv sisimovel.war imoveis.war
+RUN wget https://tomcat2.s3.amazonaws.com/sisimovel.war -0 imoveis.war
+
 
 EXPOSE 80
 CMD ["/opt/tomcat/catalina.sh", "run"]
