@@ -21,5 +21,5 @@ WORKDIR /usr/local/tomcat/webapps
 #WORKDIR /opt/tomcat/webapps
 RUN wget https://tomcat2.s3.amazonaws.com/sisimovel.war -O imoveis.war
 
-EXPOSE 8085
+EXPOSE 80
 CMD ["/opt/tomcat/catalina.sh", "run"]
