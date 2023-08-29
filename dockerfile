@@ -9,9 +9,9 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 #    mv sisimovel.war imoveis.war
 
 # Apagando diretorio e recriando
-#WORKDIR /
-#RUN rm -rf /usr/local/tomcat/webapps
-#RUN mkdir /usr/local/tomcat/webapps && ls -la
+WORKDIR /
+RUN rm -rf /usr/local/tomcat/webapps
+RUN mkdir /usr/local/tomcat/webapps && ls -la
 
 WORKDIR /usr/local/tomcat/webapps
 #RUN pwd && ls -la
