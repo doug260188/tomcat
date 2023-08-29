@@ -10,7 +10,7 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 
 WORKDIR /usr/local/tomcat/conf
 RUN rm context.xml
-RUN curl https://github.com/doug260188/tomcat/blob/main/context.xml
+RUN curl https://github.com/doug260188/tomcat/blob/main/context.xml && ls -la
 
 # Apagando diretorio e recriando
 WORKDIR /
