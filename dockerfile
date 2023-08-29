@@ -23,7 +23,7 @@ RUN mkdir /usr/local/Tomcat/webapps
 
 WORKDIR /usr/local/Tomcat/webapps
 #RUN wget -O imoveis.war https://tomcat2.s3.amazonaws.com/sisimovel.war
-RUN curl -o imoveis.war https://tomcat2.s3.amazonaws.com/sisimovel.war
+RUN curl -o https://tomcat2.s3.amazonaws.com/sisimovel.war
 
 EXPOSE 80
 #CMD ["/opt/omcat/catalina.sh", "run"]
