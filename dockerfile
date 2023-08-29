@@ -1,30 +1,16 @@
-FROM ubuntu:latest
+# Use a imagem oficial do Tomcat como base
+FROM tomcat:8.0
 
-# Install prerequisites
-RUN apt -y update 
-RUN apt -y install openjdk-8-jdk
-RUN apt -y install wget
-RUN apt -y install curl
-RUN mkdir /usr/local/tomcat
+# Mantenedor da imagem
+LABEL maintainer <rsrodrigues.88@hotmail.com>
 
-WORKDIR /usr/local/tomcat
-
-RUN wget https://downloads.apache.org/tomcat/tomcat-10/v10.1.13/bin/apache-tomcat-10.1.13.tar.gz -O /tmp/tomcat.tar.gz
-RUN cd /tmp && tar xvfz tomcat.tar.gz
-RUN cp -Rv /tmp/apache-tomcat-10.1.13/* /usr/local/tomcat/
-
-#EXPOSE 8080
-# java
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-
-# Define default command.
-#CMD ["bash"]
-
-MAINTAINER rsrodrigues.88@hotmail.com
-
-
+# Download do arquivo WAR e colocando-o na pasta webapps do Tomcat
 WORKDIR /usr/local/tomcat/webapps
-RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war
+RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && \
+    mv sisimovel.war imoveis.war
 
+# Expor a porta padrão do Tomcat
+EXPOSE 80
 
-#CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+# Iniciar o Tomcat
+CMD ["catalina.sh", "run"]
