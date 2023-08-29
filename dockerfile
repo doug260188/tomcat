@@ -6,8 +6,11 @@ RUN apt -y install openjdk-8-jdk
 RUN apt -y install wget
 RUN apt -y install curl
 RUN mkdir /usr/local/tomcat
+
+WORKDIR /usr/local/tomcat
+
 RUN wget https://downloads.apache.org/tomcat/tomcat-10/v10.1.13/bin/apache-tomcat-10.1.13.tar.gz -O /tmp/tomcat.tar.gz
-RUN cd /tmp &amp;&amp; tar xvfz tomcat.tar.gz
+RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-10.1.13/* /usr/local/tomcat/
 
 EXPOSE 8080
