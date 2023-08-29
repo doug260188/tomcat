@@ -4,5 +4,6 @@ services:
     image: doug260188/tomcat:9.0
     ports:
       - "80:8080"
-    volumes:
-          - ./webapps:/usr/local/tomcat/webapps
+#    volumes:
+#          - ./webapps:/usr/local/tomcat/webapps
+    restart: always
