@@ -10,7 +10,7 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 
 WORKDIR /usr/local/tomcat/
 RUN pwd && ls -la
-RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war #&& ls -la && mv sisimovel.war ROOT.war && ls -la
+RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && ls -la #&& mv sisimovel.war ROOT.war && ls -la
 
 
 # Expor a porta padrão do Tomcat
