@@ -1,5 +1,5 @@
 # Use a imagem oficial do Tomcat como base
-FROM tomcat:8.5
+FROM tomcat:8.0
 
 # Mantenedor da imagem
 LABEL maintainer <rsrodrigues.88@hotmail.com>
