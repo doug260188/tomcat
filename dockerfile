@@ -8,7 +8,7 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 #RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && \
 #    mv sisimovel.war imoveis.war
 
-WORKDIR /usr/local/tomcat/webapps
+WORKDIR /usr/local/tomcat/
 RUN pwd && ls -la
 RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && ls -la && mv sisimovel.war ROOT.war && ls -la
 
