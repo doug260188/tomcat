@@ -8,6 +8,10 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 #RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && \
 #    mv sisimovel.war imoveis.war
 
+# Apagando diretorio e recriando
+WORKDIR /
+RUN rm -rf /usr/local/tomcat/webapps
+RUN mkdir /usr/local/tomcat/webapps && ls -la
 
 WORKDIR /usr/local/tomcat/webapps
 #RUN pwd && ls -la
