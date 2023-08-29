@@ -8,6 +8,10 @@ LABEL maintainer <rsrodrigues.88@hotmail.com>
 #RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && \
 #    mv sisimovel.war imoveis.war
 
+WORKDIR /usr/local/tomcat/conf
+RUN rm context.xml
+RUN curl https://github.com/doug260188/tomcat/blob/main/context.xml
+
 # Apagando diretorio e recriando
 WORKDIR /
 RUN rm -rf /usr/local/tomcat/webapps
