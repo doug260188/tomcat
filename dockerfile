@@ -23,7 +23,7 @@ RUN mkdir /usr/local/tomcat/webapps
 
 WORKDIR /usr/local/tomcat/webapps
 #RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war
-RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && ls -l sisimovel.war
+RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && pwd  sisimovel.war
 
 
 EXPOSE 80
