@@ -19,9 +19,9 @@ LABEL maintainer Rodrigo Silva Rodrigues <rsrodrigues.88@hotmail.com>
 
 # Apagando diretorio webapps
 RUN rm -rf /usr/local/tomcat/webapps
-RUN mkdir /usr/local/Tomcat/webapps
+RUN mkdir /usr/local/tomcat/webapps
 
-WORKDIR /usr/local/Tomcat/webapps
+WORKDIR /usr/local/tomcat/webapps
 #RUN wget -O imoveis.war https://tomcat2.s3.amazonaws.com/sisimovel.war
 RUN curl -o https://tomcat2.s3.amazonaws.com/sisimovel.war
 
