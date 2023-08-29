@@ -13,12 +13,12 @@ RUN wget https://downloads.apache.org/tomcat/tomcat-10/v10.1.13/bin/apache-tomca
 RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-10.1.13/* /usr/local/tomcat/
 
-EXPOSE 8080
+#EXPOSE 8080
 # java
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # Define default command.
-CMD ["bash"]
+#CMD ["bash"]
 
 MAINTAINER rsrodrigues.88@hotmail.com
 
@@ -27,4 +27,4 @@ WORKDIR /usr/local/tomcat/webapps
 RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war
 
 
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+#CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
