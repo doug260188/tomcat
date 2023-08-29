@@ -9,13 +9,13 @@ pipeline {
                 sh ' rm dockerfi*'
             }
         }
-        stage('Run Image') {
-            steps {
-                sh 'wget https://github.com/doug260188/tomcat/blob/main/docker-compose.yml'
-                sh 'docker-compose up -d'
-                sh ' rm docker-compose*'
-            }
-        }
+//        stage('Run Image') {
+//            steps {
+//                sh 'wget https://github.com/doug260188/tomcat/blob/main/docker-compose.yml'
+//                sh 'docker-compose up -d'
+//                sh ' rm docker-compose*'
+//           }
+//        }
     
     }
 }
