@@ -1,7 +1,7 @@
 version: '3'
 services:
   tomcat:
-    image: tomcat:8.5
+    image: ubuntu:16.04
     ports:
       - "80:8080"
     volumes:

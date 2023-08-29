@@ -1,30 +1,26 @@
-FROM tomcat:8.0
+FROM ubuntu:16.04
 
-LABEL maintainer Rodrigo Silva Rodrigues <rsrodrigues.88@hotmail.com>
+# Install prerequisites
+RUN apt-get -y update &amp;&amp; apt-get -y upgrade
+RUN apt-get -y install openjdk-8-jdk wget
+RUN apt-get -y install curl
+RUN mkdir /usr/local/tomcat
+RUN wget https://downloads.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz -O /tmp/tomcat.tar.gz
+RUN cd /tmp &amp;&amp; tar xvfz tomcat.tar.gz
+RUN cp -Rv /tmp/apache-tomcat-10.0.20/* /usr/local/tomcat/
 
-# Instalando aplicativos
-#RUN apt update -y
-#RUN apt install gzip -y
-#RUN apt install zip -y
-#RUN apt install wget -y
-#RUN sudo apt install openjdk-16-jdk
+EXPOSE 8080
+# java
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
-# Criando Diretorio
-#RUN mkdir /opt/tomcat/
+# Define default command.
+CMD ["bash"]
 
-#WORKDIR /opt/tomcat
-#RUN wget https://tomcat2.s3.amazonaws.com/apache-tomcat-8.5.93.tar.gz 
-#RUN tar xvfz apache*.tar.gz
-#RUN mv apache-tomcat-8.5.93/* /opt/tomcat/.
+MAINTAINER rsrodrigues.88@hotmail.com
 
-# Apagando diretorio webapps
-RUN rm -rf /usr/local/tomcat/webapps
-RUN mkdir /usr/local/tomcat/webapps
 
 WORKDIR /usr/local/tomcat/webapps
-#RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war
-RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war && pwd  sisimovel.war
+RUN curl -O -L https://tomcat2.s3.amazonaws.com/sisimovel.war
 
 
-EXPOSE 80
-#CMD ["/opt/omcat/catalina.sh", "run"]
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
